@@ -1,118 +1,31 @@
-AI Fitness Coach — README
-Overview
+# AI Fitness Coach Backend
 
-The AI Fitness Coach is a mobile application that provides personalized workout and nutrition guidance using AI-powered chat, voice interaction, and customizable fitness plans. The backend uses a Retrieval-Augmented Generation (RAG) system to deliver accurate, evidence-based answers using indexed health and fitness research.
+Python backend for the AI Fitness Coach application.
 
-This project combines mobile development, backend engineering, and modern AI tools to create an interactive fitness assistant.
+## Overview
 
-Tech Stack:
+This backend supports the mobile application by handling AI-related logic, data processing, and server-side functionality needed for conversational fitness coaching.
 
-- Mobile App (Frontend)
-- React Native (Expo)
-- JavaScript
-- Expo APIs
-- Audio recording
-- Notifications
-- FileSystem
+It is responsible for connecting the app to AI services, supporting context-aware responses, and organizing backend utilities used by the project.
+
+## Responsibilities
+
+- Process requests from the mobile frontend
+- Support AI-driven conversational responses
+- Handle backend utilities and service logic
+- Manage server-side data flow for the application
+
+## Tech Stack
+
+- Python
+- OpenAI API
+- LangChain
 - SQLite
-- Vector icons (Ionicons)
 
-Backend:
+## Folder Purpose
 
-- Python (FastAPI)
-- OpenAI API (Chat + Whisper)
-- ChromaDB (vector search)
-- LangChain text splitting
-- SQLite (profiles + chat history)
+This folder contains the backend code and supporting files for the AI Fitness Coach project.
 
-Getting Started
-Install Dependencies
-Backend:
+## Notes
 
-cd backend
-pip install -r requirements.txt
-
-Mobile App:
-
-cd ai-fitness-mobile
-npm install
-
-Backend:
-
-cd backend
-pip install -r requirements.txt
-Add .env
-(Optional) python scrape_and_load.py
-uvicorn api_server:app --reload --port 8000
-
-Cloudflare Tunnel (In a new terminal):
-cloudflared tunnel --url http://localhost:8000
-
-Copy and paste url given into api.js as API_BASE_URL.
-
-Frontend (In a new terminal):
-
-cd ai-fitness-mobile
-npm install
-npx expo start -c
-
-Once all three terminals are running, scan QR code with phone to load Expo Go.
-
-backend/
-│
-├── .env
-├── requirements.txt
-├── api_server.py
-├── ai_utils.py
-├── rag_utils.py
-├── db_utils.py
-├── scrape_and_load.py
-│
-├── data/
-│   ├── chroma/               # Vector database folder
-│   ├── scraped/              # Optional: raw scraped text
-│   └── logs/                 # Backend logs (if enabled)
-│
-├── profiles.db               # SQLite (user profiles)
-└── users.db                  # SQLite (chat history)
-
-------------------------------------------------------------
-
-ai-fitness-mobile/
-│
-├── App.js
-├── index.js
-├── package.json
-├── babel.config.js
-├── app.json
-│
-├── assets/
-│   ├── icon.png
-│   ├── splash.png
-│   └── fonts/
-│
-├── screens/
-│   ├── ChatbotScreen.js
-│   ├── PlanScreen.js
-│   ├── ProfilesScreen.js
-│   ├── CreateProfileScreen.js
-│   └── EditProfileScreen.js
-│
-├── utils/
-│   ├── api.js
-│   ├── api_server.js           
-│   ├── chatStore.js
-│   ├── db.js
-│   ├── ics.js
-│   ├── notify.js
-│   ├── settings.js
-│   ├── units.js
-│   └── voice.js
-│
-├── database/
-│   └── profiles.db
-│
-└── components/
-    ├── CustomButton.js
-    ├── InputField.js
-    └── Header.js
+This is one part of the larger AI Fitness Coach project. For full project details, setup, and overall structure, see the top-level `README.md`.
